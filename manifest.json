@@ -1,0 +1,15 @@
+{
+  "name": "Neubruch Nord",
+  "short_name": "NeubruchNord",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#1a0533",
+  "theme_color": "#1a0533",
+  "icons": [
+    {
+      "src": "https://cdn.jsdelivr.net/npm/twemoji@14.0.2/assets/72x72/1f389.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    }
+  ]
+}
