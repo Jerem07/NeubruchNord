@@ -26,7 +26,8 @@ const api = {
   endSession: (id) => sb(`sessions?id=eq.${id}`, { method: "PATCH", body: JSON.stringify({ ended: true, ends_at: Date.now() }) }),
   // Members
   getMembers: (sessionId) => sb(`members?session_id=eq.${sessionId}&select=*`),
-  upsertMember: (data) => sb("members", { method: "POST", prefer: "resolution=merge-duplicates,return=representation", headers: { "Prefer": "resolution=merge-duplicates,return=representation" }, body: JSON.stringify(data) }),
+  upsertMember: (data) => sb("members", { method: "POST", headers: { "Prefer": "resolution=merge-duplicates,return=representation" }, body: JSON.stringify(data) }),
+ "resolution=merge-duplicates,return=representation", headers: { "Prefer": "resolution=merge-duplicates,return=representation" }, body: JSON.stringify(data) }),
   updateMemberScore: (sessionId, name, score) => sb(`members?session_id=eq.${sessionId}&name=eq.${encodeURIComponent(name)}`, { method: "PATCH", body: JSON.stringify({ score }) }),
   // Items
   getItems: (sessionId) => sb(`items?session_id=eq.${sessionId}&select=*&order=logged_at.asc`),
